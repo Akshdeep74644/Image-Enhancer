@@ -5,7 +5,6 @@ function Imageupload(props) {
         const imageFile = e.target.files[0];
         const imageUrl = URL.createObjectURL(imageFile);
         props.UploadImageHandler(imageUrl);
-        console.log(imageUrl)
     }
   return (
     <>

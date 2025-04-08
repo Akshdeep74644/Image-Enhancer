@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import Imageupload from "./Imageupload";
 import Imagepreview from "./Imagepreview";
+import {enhancedApical} from '../Api/apiCall'
 
 function Home() {
-  const [uploadImg, setUploadImg] = useState("");
-  const [enhancedImg, setEnhancedImg] = useState("");
+  const [uploadImg, setUploadImg] = useState(null);
+  const [enhancedImg, setEnhancedImg] = useState(null);
   const [loader, setLoader] = useState(false);
 
-  const UploadImageHandler = (imageUrl)=>{
+  const UploadImageHandler = async (imageUrl)=>{
     setUploadImg(imageUrl)
-    setEnhancedImg("#")
-    setLoader(true)
+    setLoader(true);
+    try {
+        const enhancedImage = await enhancedApical(imageUrl);
+        setEnhancedImg(enhancedImage);
+        setLoader(false);
+    } catch (error) {
+        console.log(error);
+    }
   }
 
   return (
