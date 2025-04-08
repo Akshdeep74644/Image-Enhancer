@@ -3,14 +3,14 @@ import Imageupload from "./Imageupload";
 import Imagepreview from "./Imagepreview";
 
 function Home() {
-  const [uploadImg, setUploadImg] = useState("#");
-  const [upenhancedImg, setEnhancedImg] = useState("#");
-  const [loader, setLoader] = useState("#");
+  const [uploadImg, setUploadImg] = useState("");
+  const [enhancedImg, setEnhancedImg] = useState("");
+  const [loader, setLoader] = useState(false);
 
   const UploadImageHandler = (imageUrl)=>{
     setUploadImg(imageUrl)
     setEnhancedImg("#")
-    setLoader("#")
+    setLoader(true)
   }
 
   return (
@@ -22,7 +22,7 @@ function Home() {
         <div>
           <Imagepreview
             uploadImg={uploadImg}
-            upenhancedImg={upenhancedImg}
+            enhancedImg={enhancedImg}
             loader={loader}
           />
         </div>

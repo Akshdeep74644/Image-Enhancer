@@ -10,8 +10,8 @@ function App() {
          <p>upload your image and AI enhanced it quality!</p>
         </div>
         <Home />
-        <div className="footer text-2xl">
-          <h1>Made by @akshdeep74644</h1>
+        <div className="footer text-lg">
+          <h1>Made by @Akshdeep74644</h1>
         </div>
       </div>
     </>
